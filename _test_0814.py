@@ -18,16 +18,16 @@ print(new_y_train[0])
 model = Sequential(
     [
         Flatten(input_shape = (28,28)),
-        Dense(128,activation = "sigmoide"),
-        Dense(64,activation = "relue"),
+        Dense(128,activation = "relu"),
+        Dense(64,activation = "relu"),
         Dense(10,activation = "softmax"),
     ]
 )
 model.summary()
 model.compile(optimizer = "adam", loss = "categorical_crossentropy", metrics = ["accuracy"])
-model.fit(new_x_train, new_y_train, epochs = 120, batch_size = 100, validation_split = 0.2)
+model.fit(new_x_train, new_y_train, epochs = 70, batch_size = 10, validation_split = 0.2)
 
-model.save("ngoo's_nn_model_2.h5")
+model.save("ngoo's_nn_model_(epochs_70).h5")
 
 loss, accuracy = model.evaluate(new_x_test, new_y_test)
 print(accuracy)
