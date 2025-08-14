@@ -24,6 +24,15 @@ model = Sequential(
     ]
 )
 model.summary()
+model.compile(optimizer = "adam", loss = "categorical_crossentropy", metrics = ["accuracy"])
+model.fit(new_x_train, new_y_train, epochs = 10, batch_size = 32, validation_split = 0.2)
+loss, accuracy = model.evaluate(new_x_test, new_y_test)
+print(accuracy)
+predictions = model.predict(new_x_test[:5])
+for i in range(len(predictions)):
+    print(predictions[i])
+    cv2.imshow("win", x_test[i])
+    cv2.waitKey(0)
 
 """
 print(x_train.shape)
