@@ -4,9 +4,8 @@ from tensorflow.keras.datasets import mnist
 
 (x_train, y_train),(x_test, y_test) = mnist.load_data()
 
-#mg_1 = cv2.imread("316_px_Lenna.jpg")
-
-#mg_1 = cv2.resize(img_1,(500,500), interpolation = cv2.INTER_NEAREST)
+new_x_train = x_train.astype("float32")/255.0
+new x_test = x_test.astype("float32")/255.0
 
 print(x_train.shape)
 print(x_test.shape)
