@@ -7,7 +7,11 @@ from tensorflow.keras.datasets import mnist
 new_x_test = x_test.astype("float32")/255.0
 model = tf.keras.models.load_model("ngoo's_nn_model_(epochs_70).h5")
 predictions = model.predict(new_x_test[:5])
+
 for i in range(len(predictions)):
+    
     print(predictions[i])
+    
     cv2.imshow("win", x_test[i])
+    print(list[y_test])
     cv2.waitKey(0)
