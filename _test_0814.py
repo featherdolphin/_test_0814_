@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.modle import Sequential
+from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten
 
 (x_train, y_train),(x_test, y_test) = mnist.load_data()
