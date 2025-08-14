@@ -5,7 +5,7 @@ from tensorflow.keras.datasets import mnist
 (x_train, y_train),(x_test, y_test) = mnist.load_data()
 
 new_x_train = x_train.astype("float32")/255.0
-new x_test = x_test.astype("float32")/255.0
+new_x_test = x_test.astype("float32")/255.0
 
 print(x_train.shape)
 print(x_test.shape)
