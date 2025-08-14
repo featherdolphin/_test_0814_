@@ -25,7 +25,10 @@ model = Sequential(
 )
 model.summary()
 model.compile(optimizer = "adam", loss = "categorical_crossentropy", metrics = ["accuracy"])
-model.fit(new_x_train, new_y_train, epochs = 10, batch_size = 32, validation_split = 0.2)
+model.fit(new_x_train, new_y_train, epochs = 120, batch_size = 100, validation_split = 0.2)
+
+model.save("ngoo's_nn_model.h5")
+
 loss, accuracy = model.evaluate(new_x_test, new_y_test)
 print(accuracy)
 predictions = model.predict(new_x_test[:5])
