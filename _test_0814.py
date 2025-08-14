@@ -13,7 +13,7 @@ print(x_test.shape)
 
 print(y_train[0])
 
-for i in range(0, 10):
+for i in range(10):
     img = cv2.resize(x_train[i],(280,280))
     cv2.imshow("win", img)
     cv2.waitKey(0)
