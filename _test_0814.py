@@ -18,7 +18,7 @@ print(new_y_train[0])
 model = Sequential(
     [
         Flatten(input_shape = (28,28)),
-        Dense()
+        Dense(128)
     ]
 )
 
