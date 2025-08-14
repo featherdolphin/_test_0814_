@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 from tensorflow.keras.datasets import mnist
+from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten
@@ -25,7 +26,10 @@ model = Sequential(
 )
 model.summary()
 model.compile(optimizer = "adam", loss = "categorical_crossentropy", metrics = ["accuracy"])
-model.fit(new_x_train, new_y_train, epochs = 70, batch_size = 10, validation_split = 0.2)
+
+earlyStopping = EarlyStopping(min_delta = 0.001, patience = 10)
+
+model.fit(new_x_train, new_y_train, epochs = 70, batch_size = 10, validation_split = 0.2, callbacks = [earlyStopping])
 
 model.save("ngoo's_nn_model_(epochs_70).h5")
 
